@@ -244,9 +244,16 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        protect_content=True if pre == 'filep' else False,
-        )
-                    
+        protect_content=True if pre == 'filep' 
+        reply_markup=inlinekeyboardmarkup(
+            [ 
+                [   
+                    inlinekeyboardbutton  (*join channel *, url="https://t.me/+Y5he9WRtOjAzMjE1")
+                ] 
+
+            ]
+       ) 
+    )
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
